@@ -2,8 +2,10 @@ import java.util.Scanner;
 public class MainMahasiswa24 {
     public static void main(String[] args) {
         Scanner input24 = new Scanner(System.in);
+        double tot = 0;
+        double sum = 0;
         Mahasiswa24[] mhs = new Mahasiswa24[3];
-        
+
         for (int i = 0; i < mhs.length; i++) {
 
             mhs[i] = new Mahasiswa24();
@@ -17,6 +19,9 @@ public class MainMahasiswa24 {
             mhs[i].jenisKelamin = input24.next().charAt(0);
             System.out.print("Masukkan IPK : ");
             mhs[i].IPK = input24.nextDouble();
+
+            tot += mhs[i].IPK;      //untuk menampung semua ipk yang diinput
+            double akhir = tot;     //semua nilai ditampung pada variabel akhir
             input24.nextLine();
         }
 
@@ -31,6 +36,11 @@ public class MainMahasiswa24 {
             System.out.println("Jenis Kelamin : " + mhs[k].jenisKelamin);
             System.out.println("IPK : " + mhs[k].IPK);
         }
+
+        double rata2 = tot / mhs.length;
+        System.out.print("Rata rata : " + rata2);
+        System.out.printf("%.2f" , rata2);
+        System.out.println(" ");
 
         input24.close();
     }
