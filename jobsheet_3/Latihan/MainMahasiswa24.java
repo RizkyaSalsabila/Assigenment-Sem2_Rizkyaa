@@ -3,7 +3,8 @@ public class MainMahasiswa24 {
     public static void main(String[] args) {
         Scanner input24 = new Scanner(System.in);
         double tot = 0;
-        double sum = 0;
+        int max = 0;
+        String nama;
         Mahasiswa24[] mhs = new Mahasiswa24[3];
 
         for (int i = 0; i < mhs.length; i++) {
@@ -20,10 +21,13 @@ public class MainMahasiswa24 {
             System.out.print("Masukkan IPK : ");
             mhs[i].IPK = input24.nextDouble();
 
-            tot += mhs[i].IPK;      //untuk menampung semua ipk yang diinput
-            double akhir = tot;     //semua nilai ditampung pada variabel akhir
+            max += mhs[i].IPK;
+
+            tot = tot + mhs[i].IPK;      //untuk menampung semua ipk yang diinput 
             input24.nextLine();
         }
+
+        Mahasiswa24 mahasiswaIPKTertinggi = getMahasiswaIPKTertinggi(mhs);
 
         System.out.println("\n-------------------------");
         System.out.println("Hasil");
@@ -38,10 +42,27 @@ public class MainMahasiswa24 {
         }
 
         double rata2 = tot / mhs.length;
-        System.out.print("Rata rata : " + rata2);
+        System.out.print("\nRata rata IPK keseluruhan : " + rata2);
         System.out.printf("%.2f" , rata2);
         System.out.println(" ");
 
+        System.out.println("\nMahasiswa dengan IPK terbesar");
+        System.out.println("Nama: " + mahasiswaIPKTertinggi.nama);
+        System.out.println("NIM: " + mahasiswaIPKTertinggi.nim);
+        System.out.println("Jenis Kelamin: " + mahasiswaIPKTertinggi.jenisKelamin);
+        System.out.printf("IPK: %.2f\n", mahasiswaIPKTertinggi.IPK);
+
         input24.close();
+    }
+
+    //method untuk menentukan IPK tertinggi
+    public static Mahasiswa24 getMahasiswaIPKTertinggi(Mahasiswa24[] mhs) {
+        Mahasiswa24 max = mhs[0];
+        for (Mahasiswa24 mahasiswa : mhs) {
+            if (mahasiswa.IPK > max.IPK) {
+                max = mahasiswa;
+            }
+        }
+        return max;
     }
 }
