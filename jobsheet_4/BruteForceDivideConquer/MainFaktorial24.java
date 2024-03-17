@@ -1,5 +1,3 @@
-package jobsheet_4.BruteForceDivideConquer;
-
 import java.util.Scanner;
 public class MainFaktorial24 {
     public static void main(String[] args) {

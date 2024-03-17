@@ -1,5 +1,3 @@
-package jobsheet_4.BruteForceDivideConquer;
-
 public class Faktorial24 {
     //Atribut
     public int nilai;
