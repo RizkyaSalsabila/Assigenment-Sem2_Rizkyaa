@@ -60,7 +60,25 @@ public class MainBangunRuang24 {
             System.out.printf("Volume Bola : %.2f", bl[i].hitungVB());
             System.out.printf("\nLuas Permukaan Bola : %.2f\n", bl[i].hitungLPBola());
         }
-        
+        maxVol(krc);
+
         input24.close();
     }
+
+    //Volume terbesar
+    static void maxVol(Kerucut24[] krc) {       //alasan menggunakan static agar bisa langsung dipanggil di main, tanpa memanggil object
+        double maxVol = krc[0].hitungVK();    //mula mula volume terbesar adalah indeks ke 0
+        int maxVolIdx = 0;          //digunakan untuk menyimpan indkes
+        for (int i = 1; i < 3; i++) {
+            if (krc[i].hitungVK() > maxVol) {
+                maxVol = krc[i].hitungVK();
+                maxVolIdx = i;
+            }
+        }
+
+        System.out.println("Max Volume : " + maxVol);
+        System.out.println("Jari jari : " + krc[maxVolIdx].jari);
+        System.out.println("Sisi miring : " + krc[maxVolIdx].sisiMiring);
+    }
+    
 }

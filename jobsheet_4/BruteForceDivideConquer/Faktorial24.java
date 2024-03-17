@@ -1,0 +1,26 @@
+package jobsheet_4.BruteForceDivideConquer;
+
+public class Faktorial24 {
+    //Atribut
+    public int nilai;
+
+    //method faktorialBF()
+    int faktorialBF (int n) {
+        int fakto = 1;      //variabel diinisialisasikan dengan nilai awal 1
+        for (int i = 1; i <= n; i++) {
+            fakto = fakto * i;
+        }
+        return fakto;       //cetak fakto
+    }
+
+    //method faktorialDC()
+    int faktorialDC (int n) {
+        if (n == 1) {
+            return 1;
+        }
+        else {
+            int fakto = n * faktorialDC(n-1);
+            return fakto;
+        }
+    }
+}

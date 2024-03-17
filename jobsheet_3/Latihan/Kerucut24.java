@@ -1,7 +1,9 @@
 public class Kerucut24 {
+    //Atribut
     public double jari;
     public double sisiMiring;
 
+    //Konstruktor berparameter
     Kerucut24(int r, int sm) {
         jari = r;
         sisiMiring = sm;
