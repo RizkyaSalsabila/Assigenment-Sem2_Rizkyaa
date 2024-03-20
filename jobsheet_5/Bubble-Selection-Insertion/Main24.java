@@ -26,6 +26,11 @@ public class Main24 {
         System.out.println("\n\nData Mahasiswa setelah sorting ASC (kecil ke besar) berdasarkan IPK");
         list.selectionSort();
         list.tampil();
+
+        //Percobaan 3
+        System.out.println("\n\nData Mahasiswa setelah sorting ASC (kecil ke besar) berdasarkan IPK -- Insertion Sort");
+        list.insertionSort();
+        list.tampil();
         
     }
 }
