@@ -4,11 +4,21 @@ public class Faktorial24 {
 
     //method faktorialBF()
     int faktorialBF (int n) {
-        int fakto = 1;      //variabel diinisialisasikan dengan nilai awal 1
+        /* PERULANGAN FOR
+        int fakto = 1;
         for (int i = 1; i <= n; i++) {
             fakto = fakto * i;
         }
         return fakto;       //cetak fakto
+        */
+
+        //PERULANGAN WHILE
+        int fakto = 1;
+        int i = 1;
+        while (i <= n) {
+            fakto = fakto * i;
+            i++;
+        } return fakto;
     }
 
     //method faktorialDC()
