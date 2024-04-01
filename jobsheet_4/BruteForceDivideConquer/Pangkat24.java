@@ -2,6 +2,11 @@ public class Pangkat24 {
     //Atribut
     public int nilai, pangkat;
 
+    public Pangkat24(int n, int p) {
+        nilai = n;
+        pangkat = p;
+    }
+
     //method PangkatBF()
     int pangkatBF(int a, int n) {
         int hasil = 1;
