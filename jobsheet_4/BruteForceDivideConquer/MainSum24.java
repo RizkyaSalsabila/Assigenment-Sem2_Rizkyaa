@@ -5,13 +5,12 @@ public class MainSum24 {
         System.out.println("-------------------------------------------");
         System.out.println("Program Menghitung Keuntungan Total (Satuan Juta. Misal 5.9)");
         System.out.print("Masukkan jumlah bulan : ");
-        int elemen = input24.nextInt();
+        int elm = input24.nextInt();
 
-        Sum24[] sm = new Sum24[elemen];
-        System.out.println("-------------------------------------------");
+        Sum24 sm = new Sum24(elm);
         for (int i = 0; i < sm.elemen; i++) {
             System.out.print("Masukkan untung bulan ke - " + (i+1) + " : ");
-            sm[i].keuntungan = input24.nextDouble();
+            sm.keuntungan[i] = input24.nextDouble();
         }
 
         System.out.println("-------------------------------------------");
@@ -19,8 +18,7 @@ public class MainSum24 {
         System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " + sm.totalBF(sm.keuntungan));
         System.out.println("-------------------------------------------");
         System.out.println("Algoritma Divide Conquer");
-        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " + sm.totalDC(sm.keuntungan, 0, sm.elemen-1));
-        
+        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " + sm.totalDC(sm.keuntungan, 0, sm.elemen - 1));
 
         input24.close();
     }
