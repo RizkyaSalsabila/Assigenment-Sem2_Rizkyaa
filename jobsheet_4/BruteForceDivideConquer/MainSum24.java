@@ -4,21 +4,31 @@ public class MainSum24 {
         Scanner input24 = new Scanner(System.in);
         System.out.println("-------------------------------------------");
         System.out.println("Program Menghitung Keuntungan Total (Satuan Juta. Misal 5.9)");
-        System.out.print("Masukkan jumlah bulan : ");
-        int elm = input24.nextInt();
+        System.out.print("Masukkan banyaknya perusahaan : ");
+        int n = input24.nextInt();
 
-        Sum24 sm = new Sum24(elm);
-        for (int i = 0; i < sm.elemen; i++) {
-            System.out.print("Masukkan untung bulan ke - " + (i+1) + " : ");
-            sm.keuntungan[i] = input24.nextDouble();
+        Sum24[] sm = new Sum24[n];
+
+        for (int k = 0; k < n; k++) {
+            System.out.println("\nPerusahaan " + (k+1));
+            System.out.print("Masukkan jumlah bulan : ");
+            int elm = input24.nextInt();
+            sm[k] = new Sum24(elm);
+
+            for (int i = 0; i < elm; i++) {
+                System.out.print("Masukkan untung bulan ke - " + (i+1) + " : ");
+                sm[k].keuntungan[i] = input24.nextDouble();
+            }
         }
 
-        System.out.println("-------------------------------------------");
-        System.out.println("Algoritma Brute Force");
-        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " + sm.totalBF(sm.keuntungan));
-        System.out.println("-------------------------------------------");
-        System.out.println("Algoritma Divide Conquer");
-        System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " + sm.totalDC(sm.keuntungan, 0, sm.elemen - 1));
+        for (int k = 0; k < n; k++) {
+            System.out.println("\n============================");
+            System.out.println("Perusahaan ke - " + (k+1) + " : ");
+            System.out.println("1. Algoritma Brute Force");
+            System.out.println("Total keuntungan perusahaan selama " + sm[k].elemen + " bulan adalah " + sm[k].totalBF(sm[k].keuntungan));
+            System.out.println("2. Algoritma Divide Conquer");
+            System.out.println("Total keuntungan perusahaan selama " + sm[k].elemen + " bulan adalah " + sm[k].totalDC(sm[k].keuntungan, 0, sm[k].elemen - 1));
+        }
 
         input24.close();
     }
