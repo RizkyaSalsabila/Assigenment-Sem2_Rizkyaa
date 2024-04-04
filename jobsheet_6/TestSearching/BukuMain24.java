@@ -45,6 +45,13 @@ public class BukuMain24 {
     data.tampilPosisi(cari, posisi);
     data.tampilData(cari, posisi);
 
+    //Percobaan 2
+    System.out.println("----------------------------");
+    System.out.println("Menggunakan BINARY SEARCH");
+    posisi = data.findBinarySearch(cari, 0, jmlBuku - 1);
+    data.tampilPosisi(cari, posisi);
+    data.tampilData(cari, posisi);
+
     input24.close();
     }
 }

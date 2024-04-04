@@ -19,10 +19,10 @@ public class PencarianBuku24 {
     }
 
     public int findSeqSearch(int cari) {
-        int posisi = 1;
+        int posisi = -1;
         for (int j = 0; j < listBuku.length; j++) {
             if (listBuku[j].kodeBuku==cari) {
-                j = posisi;
+                posisi = j;
                 break;
             }
         }
@@ -48,4 +48,20 @@ public class PencarianBuku24 {
             System.out.println("=Data " + x + " tidak ditemukan=");
         }
     } 
+
+    //Percobaan 2
+    public int findBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;   //ditambahkan left
+            if (cari == listBuku[mid].kodeBuku) {
+                return (mid);
+            } else if (listBuku[mid].kodeBuku > cari) {
+                return findBinarySearch(cari, left, mid);
+            } else {
+                return findBinarySearch(cari, mid, right);
+            }
+        }
+        return -1;
+    }
 }
