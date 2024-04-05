@@ -36,12 +36,12 @@ public class BukuMain24 {
     System.out.println("----------------------------\n");
     System.out.println("----------------------------");
     System.out.println("Pencarian Data\n");
-    System.out.println("Masukkan Kode Buku yang dicari ");
-    System.out.print("\tKode Buku : ");
+    System.out.println("Masukkan Judul Buku yang dicari ");
+    System.out.print("\tJudul Buku : ");
     String cari = input24.nextLine();
 
     System.out.println("\nPencarian dilakukan menggunakan 'Sequential Search'");
-    int posisi = data.findSeqSearch(cari);
+    int posisi = data.findSeqSearchJudBuk(cari);
     data.tampilPosisi(cari, posisi);
     data.tampilData(cari, posisi);
 
@@ -57,7 +57,8 @@ public class BukuMain24 {
     //Percobaan 2
     System.out.println("----------------------------");
     System.out.println("Menggunakan BINARY SEARCH");
-    posisi = data.FindBinarySearch(cari, 0, jmlBuku - 1);
+    posisi = data.findBinarySearchJudBuk(cari);
+    data.cariJudulBuku(cari);
     data.tampilPosisi(cari, posisi);
     data.tampilData(cari, posisi);
 

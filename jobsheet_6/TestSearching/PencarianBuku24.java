@@ -12,21 +12,57 @@ public class PencarianBuku24 {
         }
     }
 
+    //Penambahan method nomer 2 latihan
+    public void pencarianBuku24() {
+        for (int i = 0; i < listBuku.length; i++) {
+            listBuku[i] = null;
+        }
+    }
+
     void tampil() {
         for (Buku24 m : listBuku) {
             m.tampilDataBuku();
         }
     }
 
-    public int findSeqSearch(String cari) {
-        int posisi = -1;
-        for (int j = 0; j < listBuku.length; j++) {
-            if (listBuku[j].kodeBuku.equals(cari)) {
-                posisi = j;
-                break;
+    //Penambahan method nomer 2 latihan
+    public void bubbleSortBuku() {
+        for (int i = 0; i < listBuku.length - 1; i++) {
+            for (int j = 0; j < listBuku.length - i - 1; j++) {
+                if (listBuku[j].kodeBuku.compareTo(listBuku[j+1].kodeBuku) > 0) {
+                    Buku24 obj = listBuku[j];
+                    listBuku[j] = listBuku[j+1];
+                    listBuku[j+1] = obj;
+                }
             }
         }
-        return posisi;
+    }
+
+    public int findSeqSearchJudBuk(String cari) {
+        for (int i = 0; i < listBuku.length; i++) {
+            if (listBuku[i].judulBuku.equalsIgnoreCase(cari)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int findBinarySearchJudBuk(String cari) {
+        bubbleSortBuku();
+        int left = 0;
+        int right = idx - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int x = cari.compareToIgnoreCase(listBuku[mid].judulBuku);
+            if (x == 0) {
+                return mid; //  Kembalikan posisi, jika ditemukan
+            } else if (x < 0) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1; //Kembalikan -1, jika tidak ditemukan
     }
 
     public void tampilPosisi(String cari, int pos) {
@@ -52,24 +88,28 @@ public class PencarianBuku24 {
     //Penambahan nomer 3
     public Buku24 findBuku(String cari) {
         for (Buku24 buku : listBuku) {
-            if(buku.kodeBuku.equals(cari)) {
+            if(buku != null && buku.judulBuku.equals(cari)) {
                 return buku;
             }
         }
         return null;
     }
 
-    public int FindBinarySearch(String cari, int left, int right) {
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (cari.equals(listBuku[mid].kodeBuku)) {
-            return mid;
-            } else if (cari.compareTo(listBuku[mid].kodeBuku) < 0) {
-            right = mid - 1;
-            } else {
-            left = mid + 1;
+    //Penambahan method nomer 2 latihan
+    public void cariJudulBuku(String judul) {
+        int jum = 0;
+        for (int i = 0; i < idx; i++) {
+            if (listBuku[i].judulBuku.equalsIgnoreCase(judul)) {
+                jum++;
             }
         }
-        return -1;
+
+        if (jum == 0) {
+            System.out.println("Judul Buku tidak ditemukan");
+        } else if (jum == 1) {
+            System.out.println("Judul buku ditemukan");
+        } else {
+            System.out.println("Peringatan : Buku dengan judul " + judul + " terdapat lebih dari satu! Salah satunya di : ");
+        }
     }
 }

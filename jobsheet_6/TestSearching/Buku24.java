@@ -24,4 +24,4 @@ public class Buku24 {
         System.out.println("Pengarang : " + pengarang);
         System.out.println("Stok : " + stock);
     }
- }
+}
