@@ -45,6 +45,10 @@ public class BukuMain24 {
     data.tampilPosisi(cari, posisi);
     data.tampilData(cari, posisi);
 
+    //Penambahan no 3
+    Buku24 dataBuku24 = data.findBuku(cari);
+    dataBuku24.tampilDataBuku();
+
     //Percobaan 2
     System.out.println("----------------------------");
     System.out.println("Menggunakan BINARY SEARCH");

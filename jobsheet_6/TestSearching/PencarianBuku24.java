@@ -49,6 +49,19 @@ public class PencarianBuku24 {
         }
     } 
 
+    //Penambahan nomer 3
+    Buku24 findBuku(int kodeBuku) {
+        int iterasi = 0;
+        do {
+            if (iterasi == listBuku.length) {
+                return null;
+            } else if (listBuku[iterasi].kodeBuku == kodeBuku) {
+                return listBuku[iterasi];
+            } 
+            iterasi++;
+        } while (true);
+    }
+
     //Percobaan 2
     public int findBinarySearch(int cari, int left, int right) {
         int mid;
@@ -56,10 +69,10 @@ public class PencarianBuku24 {
             mid = (left + right) / 2;   //ditambahkan left
             if (cari == listBuku[mid].kodeBuku) {
                 return (mid);
-            } else if (listBuku[mid].kodeBuku > cari) {
-                return findBinarySearch(cari, left, mid);
+            } else if (listBuku[mid].kodeBuku < cari) {
+                return findBinarySearch(cari, left, mid - 1);
             } else {
-                return findBinarySearch(cari, mid, right);
+                return findBinarySearch(cari, mid + 1, right);
             }
         }
         return -1;
