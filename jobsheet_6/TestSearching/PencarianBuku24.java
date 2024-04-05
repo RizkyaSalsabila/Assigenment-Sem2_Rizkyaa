@@ -18,10 +18,10 @@ public class PencarianBuku24 {
         }
     }
 
-    public int findSeqSearch(int cari) {
+    public int findSeqSearch(String cari) {
         int posisi = -1;
         for (int j = 0; j < listBuku.length; j++) {
-            if (listBuku[j].kodeBuku==cari) {
+            if (listBuku[j].kodeBuku.equals(cari)) {
                 posisi = j;
                 break;
             }
@@ -29,15 +29,15 @@ public class PencarianBuku24 {
         return posisi;
     }
 
-    public void tampilPosisi(int x, int pos) {
+    public void tampilPosisi(String cari, int pos) {
         if (pos != -1) {
-            System.out.println("=Data " + x + " ditemukan pada indeks " + pos + " =");
+            System.out.println("=Data " + cari + " ditemukan pada indeks " + pos + " =");
         } else {
-            System.out.println("=Data " + x + " tidak ditemukan=");
+            System.out.println("=Data " + cari + " tidak ditemukan=");
         }
     }
 
-    public void tampilData(int x, int pos) {
+    public void tampilData(String cari, int pos) {
         if (pos!= -1) {
             System.out.println("Kode Buku    : " +listBuku[pos].kodeBuku);
             System.out.println("Judul        : " + listBuku[pos].judulBuku);
@@ -45,34 +45,29 @@ public class PencarianBuku24 {
             System.out.println("Pengarang    : " + listBuku[pos].pengarang);
             System.out.println("Stock        : " + listBuku[pos].stock);
         } else {
-            System.out.println("=Data " + x + " tidak ditemukan=");
+            System.out.println("=Data " + cari + " tidak ditemukan=");
         }
     } 
 
     //Penambahan nomer 3
-    Buku24 findBuku(int kodeBuku) {
-        int iterasi = 0;
-        do {
-            if (iterasi == listBuku.length) {
-                return null;
-            } else if (listBuku[iterasi].kodeBuku == kodeBuku) {
-                return listBuku[iterasi];
-            } 
-            iterasi++;
-        } while (true);
+    public Buku24 findBuku(String cari) {
+        for (Buku24 buku : listBuku) {
+            if(buku.kodeBuku.equals(cari)) {
+                return buku;
+            }
+        }
+        return null;
     }
 
-    //Percobaan 2
-    public int findBinarySearch(int cari, int left, int right) {
-        int mid;
-        if (right >= left) {
-            mid = (left + right) / 2;   //ditambahkan left
-            if (cari == listBuku[mid].kodeBuku) {
-                return (mid);
-            } else if (listBuku[mid].kodeBuku < cari) {
-                return findBinarySearch(cari, left, mid - 1);
+    public int FindBinarySearch(String cari, int left, int right) {
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (cari.equals(listBuku[mid].kodeBuku)) {
+            return mid;
+            } else if (cari.compareTo(listBuku[mid].kodeBuku) < 0) {
+            right = mid - 1;
             } else {
-                return findBinarySearch(cari, mid + 1, right);
+            left = mid + 1;
             }
         }
         return -1;

@@ -1,14 +1,14 @@
 public class Buku24 {
     //Atribut
-    int kodeBuku;
+    String kodeBuku; //ubah ke string
     String judulBuku;
     int tahunTerbit;
     String pengarang;
     int stock;
 
     //Konstruktor berparameter
-    public Buku24(int KB, String JB, int TT, String P, int S) {
-        kodeBuku = KB;
+    public Buku24(String kodeBuku2, String JB, int TT, String P, int S) {
+        kodeBuku = kodeBuku2;
         judulBuku = JB;
         tahunTerbit = TT;
         pengarang = P;

@@ -13,8 +13,7 @@ public class BukuMain24 {
     for (int i = 0; i < jmlBuku; i++) {
         System.out.println("=======================");
         System.out.print("Kode Buku : ");
-        int kodeBuku = input24.nextInt();
-        input24.nextLine();
+        String kodeBuku = input24.nextLine();
         System.out.print("Judul Buku : ");
         String judulBuku = input24.nextLine();
         System.out.print("Tahun Terbit : ");
@@ -24,6 +23,7 @@ public class BukuMain24 {
         String pengarang = input24.nextLine();
         System.out.print("Stock : ");
         int stock = input24.nextInt();
+        input24.nextLine();
 
         Buku24 m = new Buku24(kodeBuku, judulBuku, tahunTerbit, pengarang, stock);
         data.tambah(m);
@@ -38,7 +38,7 @@ public class BukuMain24 {
     System.out.println("Pencarian Data\n");
     System.out.println("Masukkan Kode Buku yang dicari ");
     System.out.print("\tKode Buku : ");
-    int cari = input24.nextInt();
+    String cari = input24.nextLine();
 
     System.out.println("\nPencarian dilakukan menggunakan 'Sequential Search'");
     int posisi = data.findSeqSearch(cari);
@@ -46,13 +46,18 @@ public class BukuMain24 {
     data.tampilData(cari, posisi);
 
     //Penambahan no 3
+    System.out.println("Menggunakan Metode FIND BUKU");
     Buku24 dataBuku24 = data.findBuku(cari);
-    dataBuku24.tampilDataBuku();
+    if (dataBuku24 != null) {
+        dataBuku24.tampilDataBuku();
+    } else {
+        System.out.println("Buku tidak ditemukan");
+    }
 
     //Percobaan 2
     System.out.println("----------------------------");
     System.out.println("Menggunakan BINARY SEARCH");
-    posisi = data.findBinarySearch(cari, 0, jmlBuku - 1);
+    posisi = data.FindBinarySearch(cari, 0, jmlBuku - 1);
     data.tampilPosisi(cari, posisi);
     data.tampilData(cari, posisi);
 
