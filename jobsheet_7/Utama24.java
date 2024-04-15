@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 public class Utama24 {
     public static void main(String[] args) {
-        //Instansiasi Gudang
-        Gudang24 gudang = new Gudang24(7);
-
         //Deklarasi Scanner
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan data kapasitas : ");
+        int input = scanner.nextInt();
+
+        //Instansiasi Gudang
+        Gudang24 gudang = new Gudang24(input);
 
         while(true) {
             System.out.println("\n------------------------------");
@@ -14,7 +16,8 @@ public class Utama24 {
             System.out.println("1. Tambah Barang");
             System.out.println("2. Ambil Barang");
             System.out.println("3. Tampilkan Tumpukan Barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Lihat Barang Teratas");
+            System.out.println("5. Keluar");
             System.out.print("Pilih Operasi : ");
             int pilih = scanner.nextInt();
             scanner.nextLine();
@@ -43,6 +46,9 @@ public class Utama24 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
+                    gudang.lihatBarangTeratas();
+                    break;
+                case 5:
                     System.exit(0);
                     break;
                 default:
