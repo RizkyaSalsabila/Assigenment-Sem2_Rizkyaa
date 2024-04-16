@@ -62,6 +62,18 @@ public class Gudang24 {
         }
     }
 
+    //LATIHAN PRAKTIKUM poin A
+    Barang24 lihatBarangTerbawah() {
+        if(!cekKosong()) {
+           Barang24 barangTerbawah = tumpukan[0];
+           System.out.println("Barang Terbawah : " + barangTerbawah.nama);
+           return barangTerbawah;
+        } else {
+            System.out.println("Tumpukan Barang Kosong");
+            return null;
+        }
+    }
+
     void tampilkanBarang() {
         if(!cekKosong()) {
             System.out.println("Rincian tumpukan Barang di Gudang : ");
@@ -70,6 +82,39 @@ public class Gudang24 {
             }
         } else {
             System.out.println("Tumpukan Barang Kosong");
+        }
+    }
+
+    //LATIHAN PRAKTIKUM poin B
+    public Barang24 cariBarangKode(int cariKode) {
+        if(!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].kode == cariKode) {
+                    System.out.println("Barang dengan kode : " + tumpukan[i].kode + " ditemukan.");
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang dengan kode " + cariKode + " tidak ditemukan.");
+            return null;
+        } else {
+            System.out.println("Tumpukan Barang Kosong");
+            return null;
+        }
+    }
+
+    public Barang24 cariBarangNama(String cariNama) {
+        if(!cekKosong()) {
+            for (int i = 0; i <= top; i++) {
+                if (tumpukan[i].nama.equalsIgnoreCase(cariNama)) {
+                    System.out.println("Barang dengan nama : " + tumpukan[i].nama + " ditemukan.");
+                    return tumpukan[i];
+                }
+            }
+            System.out.println("Barang dengan nama " + cariNama + " tidak ditemukan.");
+            return null;
+        } else {
+            System.out.println("Tumpukan Barang Kosong");
+            return null;
         }
     }
 

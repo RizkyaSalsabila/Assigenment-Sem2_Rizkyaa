@@ -17,7 +17,9 @@ public class Utama24 {
             System.out.println("2. Ambil Barang");
             System.out.println("3. Tampilkan Tumpukan Barang");
             System.out.println("4. Lihat Barang Teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat Barang Terbawah");
+            System.out.println("6. Cari Barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih Operasi : ");
             int pilih = scanner.nextInt();
             scanner.nextLine();
@@ -49,6 +51,29 @@ public class Utama24 {
                     gudang.lihatBarangTeratas();
                     break;
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+                case 6:
+                    System.out.println("Jenis Pencarian : ");
+                    System.out.println("(1) Berdasarkan Kode Barang");
+                    System.out.println("(2) Berdasarkan Nama Barang");
+                    System.out.print("Pilih : ");
+                    int pencarian = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if(pencarian == 1) {
+                        System.out.print("Kode Barang yang ingin dicari :" );
+                        int kodeBarang = scanner.nextInt();
+                        gudang.cariBarangKode(kodeBarang);
+                    } else if(pencarian == 2) {
+                        System.out.print("Nama Barang yang ingin dicari : ");
+                        String namaBarang = scanner.nextLine();
+                        gudang.cariBarangNama(namaBarang);
+                    } else {
+                        System.out.println("Pilihan Anda tidak valid. Silahkan isi dengan benar!!");
+                    }
+                    break;
+                case 7:
                     System.exit(0);
                     break;
                 default:
