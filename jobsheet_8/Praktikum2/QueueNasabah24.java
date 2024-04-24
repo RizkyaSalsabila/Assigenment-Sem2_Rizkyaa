@@ -44,7 +44,7 @@ public class QueueNasabah24 {
         if (isEmpty()) {
             System.out.println("Queue masih kosong");
         } else {
-            System.out.println("Elemen terdepan : ");
+            System.out.println("Elemen terdepan");
             System.out.println("No Rekening : " + data[front].norek);
             System.out.println("Nama : " + data[front].nama);
             System.out.println("Alamat : " + data[front].alamat);
@@ -140,5 +140,21 @@ public class QueueNasabah24 {
             }
         }
         return dt;
+    }
+
+    public void peekRear() {
+        //pengecekan kondisi
+        //1. jika kosong, iya -> maka muncul perintah data masih kosong
+        //2.              tidak - > muncul perintah data terbelakang "data[rear]"
+        if(isEmpty()) {
+            System.out.println("Queue masih kosong");
+        } else {
+            System.out.println("Elemen terbelakang ");
+            System.out.println("Nomer Rekening : " + data[rear].norek);
+            System.out.println("Nama : " + data[rear].nama);
+            System.out.println("Alamat : " + data[rear].alamat);
+            System.out.println("Umur : " + data[rear].umur);
+            System.out.println("Saldo : " + data[rear].saldo);
+        }
     }
 }
