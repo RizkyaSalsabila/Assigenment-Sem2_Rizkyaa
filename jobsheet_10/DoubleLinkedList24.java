@@ -98,6 +98,7 @@ public class DoubleLinkedList24 {
         }
     }
 
+    //PERCOBAAN 2 'penambahan method untuk menghapus'
     //method untuk menghapus pada data yang di awal 'removeFirst'
     public void removeFirst() throws Exception{
         if (isEmpty()) {
@@ -153,5 +154,37 @@ public class DoubleLinkedList24 {
             }
             size--;
         }
+    }
+
+    //method untuk mendapatkan data posisi awal 'getFirst'
+    public int getFirst() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked lists masih kosong");
+        }
+        return head.data;
+    }
+
+    //method untuk mendapatkan data posisi akhir 'getLast'
+    public int getLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked lists masih kosong");
+        } 
+        Node24 tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    //method untuk mendapatkan data pada indeks tertentu 'get'
+    public int get(int index) throws Exception {
+        if (isEmpty() || index >= size) {
+            throw new Exception("Nilai indeks yang diinput di luar batas");
+        }
+        Node24 tmp = head;
+        for(int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
     }
 }
