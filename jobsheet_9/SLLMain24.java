@@ -35,5 +35,41 @@ public class SLLMain24 {
         System.out.println("Data '833' ditempatkan ke indeks 3 : ");
         singLL.insertAt(3, 833);
         singLL.print();
+        System.out.println("\n-----------------------------");
+
+        //PERCOBAAN 2
+        System.out.println("=== CATATAN : Indeks dimulai dari 0, dan data dimulai dari 1 ===\n");
+
+        //panggil method getData
+        System.out.println("Data pada indeks ke - 1 / data ke - 2 adalah " + singLL.getData(1));
+        System.out.println("\n-----------------------------");
+
+        //panggil method indexOf
+        System.out.println("Data 5 '760' berada pada indeks ke - " + singLL.indexOf(760));
+        System.out.println("\n-----------------------------");
+
+        //panggil method remove
+        System.out.println("Isi Data '999' dihapus : ");
+        singLL.remove(999);
+        singLL.print();
+        System.out.println("\n-----------------------------");
+
+        //panggil method removeAt
+        System.out.println("Indeks ke - 0 '700' dihapus : ");
+        singLL.removeAt(0);
+        singLL.print();
+        System.out.println("\n-----------------------------");
+        
+        //panggil method removeFirst
+        System.out.println("Indeks yang paling awal '890' dihapus : ");
+        singLL.removeFirst();
+        singLL.print();
+        System.out.println("\n-----------------------------");
+
+        //panggil method removeLast
+        System.out.println("Indeks yang paling terakhir '760' dihapus : ");
+        singLL.removeLast();
+        singLL.print();
+        System.out.println("\n-----------------------------");
     }
 }
