@@ -27,10 +27,15 @@ public class ContohList24 {
         names.add("Shannum");
         names.add("Uwais");
         names.add("Al-Qarni");
-        System.out.printf("Elemen 0: %s total elemen : %s elemen terakhir : %s\n", names.get(0), names.size(), names.get(names.size() - 1));
+        System.out.printf("Elemen 0: %s total elemen: %s elemen terakhir: %s\n", names.get(0), names.size(), names.get(names.size() - 1));
        
         names.set(0, "My kid");
-        System.out.printf("Elemen 0: %s total elemen : %s elemen terakhir : %s\n", names.get(0), names.size(), names.get(names.size() - 1));
-        System.out.println("\nNames : " + names.toString());
-    }
+        System.out.printf("\nElemen 0: %s total elemen: %s elemen terakhir: %s\n", names.get(0), names.size(), names.get(names.size() - 1));
+        System.out.println("Names: " + names.toString());
+
+        //soal no 4
+        names.push("Mei - mei");
+        System.out.printf("\nElemen 0: %s total elemen: %s elemen terakhir: %s\n", names.getFirst(), names.size(), names.getLast());
+        System.out.println("Names: " + names.toString());
+    }   
 }
