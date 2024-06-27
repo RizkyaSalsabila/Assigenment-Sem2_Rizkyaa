@@ -16,6 +16,10 @@ public class Mahasiswa24 {
         this.telp = telp;
     }
 
+    public String getNim() {
+        return nim;
+    }
+
     @Override
     public String toString() {
         return "Mahasiswa{" + "nim : " + nim + ", nama : " + nama + ", notelp : " + telp + "}";
